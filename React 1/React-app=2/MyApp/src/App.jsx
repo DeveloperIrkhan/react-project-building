@@ -21,6 +21,9 @@ function App() {
     setPassword(pass)
   }, [length, numberAllowed, specialAllowed])
   useEffect(() => { generatePassword() }, [length, numberAllowed, specialAllowed])
+  const copyPassword = () => {
+    window.navigator.clipboard.writeText(password)
+  }
   return (
     <>
       <div>
@@ -35,7 +38,12 @@ function App() {
               readOnly
               className="block border-0 py-1 px-3 text-gray-900 w-full" />
 
-            <button className='outline-none bg-blue-500 text-white px-3 py-1 shrink-0'>Copy</button>
+            <button onClick={copyPassword}
+              className='outline-none bg-blue-500 text-white 
+            px-3 py-1 shrink-0 
+            hover:bg-blue-700
+          active:bg-blue-900 
+            focus:outline-none focus:ring'>Copy</button>
           </div>
           <div className="flex items-center mt-4 gap-2">
             <input
