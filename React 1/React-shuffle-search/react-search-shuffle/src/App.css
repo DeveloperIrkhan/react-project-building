@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.window-style{
+    width: 50%;
+}
+.div-styling{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
